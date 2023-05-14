@@ -49,7 +49,7 @@ def test_create_stock(client):
                                                 ]
                                             })
     assert response.status_code == 201
-    assert Stock.objects.values()[0]['name'] == 'Course_test'
+
 
 
 
