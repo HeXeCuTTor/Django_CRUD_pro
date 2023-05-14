@@ -58,4 +58,13 @@ jobs:
           DB_USER: ${{env.PG_USER}}
           DB_PASSWORD: ${{env.PG_PASSWORD}}
           DB_HOST: ${{env.PG_HOST}}
-          DB_PORT: ${{env.PG_PORT}}    
+          DB_PORT: ${{env.PG_PORT}} 
+
+      - name: Деплой
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.SSH_HOST}}
+          username: ${{secrets.SSH_USER}}
+          password: ${{secrets.SSH_PASSWORD}}
+          port: 6000
+          script: expect /home/adilet/django_cicd/pull.exp   
