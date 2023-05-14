@@ -66,5 +66,5 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USER}}
           password: ${{secrets.SSH_PASSWORD}}
-          port: 6000
+          port: 3000
           script: expect /home/ilya/Django_CRUD_pro/pull.exp   
