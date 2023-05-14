@@ -21,5 +21,5 @@ class StockViewSet(ModelViewSet):
     filterset_fields = ['products']
 
 
-def test_change():
-    return Response("Всем привет! Все получилось!")
+# def test_change():
+#     return Response("Всем привет! Все получилось!")
