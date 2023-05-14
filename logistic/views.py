@@ -7,6 +7,9 @@ from logistic.models import Product, Stock
 from logistic.serializers import ProductSerializer, StockSerializer
 
 
+def test_change():
+    return Response("Всем привет! Все получилось!")
+
 class ProductViewSet(ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
@@ -20,6 +23,3 @@ class StockViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['products']
 
-
-def test_change():
-    return Response("Всем привет! Все получилось!")
