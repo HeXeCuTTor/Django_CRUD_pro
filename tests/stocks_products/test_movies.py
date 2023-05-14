@@ -26,10 +26,10 @@ def make_stock():
 def test():
     assert 2 == 2
 
-# @pytest.mark.django_db
-# def test_get_stock(client):
-#     response = client.get('/api/v1/stocks/')
-#     assert response.status_code == 200
+@pytest.mark.django_db
+def test_get_stock(client):
+    response = client.get('/api/v1/stocks/')
+    assert response.status_code == 200
 
 # @pytest.mark.django_db
 # def test_create_stock(client):
