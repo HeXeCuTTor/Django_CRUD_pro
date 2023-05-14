@@ -67,4 +67,4 @@ jobs:
           username: ${{secrets.SSH_USER}}
           password: ${{secrets.SSH_PASSWORD}}
           port: 6000
-          script: expect /home/adilet/django_cicd/pull.exp   
+          script: expect /home/ilya/Django_CRUD_pro/pull.exp   
