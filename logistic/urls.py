@@ -8,4 +8,4 @@ router.register('products', ProductViewSet)
 router.register('stocks', StockViewSet)
 
 
-urlpatterns = [router.urls, path('api/v1/test/', test_change)]
+urlpatterns = router.urls, path('api/v1/test/', test_change)
