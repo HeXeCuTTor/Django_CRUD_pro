@@ -9,12 +9,12 @@ from logistic.models import Stock, Product
 def client():
     return APIClient()
 
-# @pytest.fixture
-# def make_product():
-#     def products(*args,**kwargs):
-#         return baker.make(Product,*args, **kwargs)
+@pytest.fixture
+def make_product():
+    def products(*args,**kwargs):
+        return baker.make(Product,*args, **kwargs)
     
-    # return products
+    return products
 
 @pytest.fixture
 def make_stock():
@@ -27,8 +27,13 @@ def test():
     assert 2 == 2
 
 @pytest.mark.django_db
+def test_get_stock(client):
+    response = client.get('/api/v1/stocks/')
+    assert response.status_code == 200
+
+@pytest.mark.django_db
 def test_create_stock(client):
-    response = client.post('stocks/',{
+    response = client.post('/api/v1/stocks/',{
                                                 "address": "мой адрес не дом и не улица, мой адрес сегодня такой: www.ленинград-спб.ru6",
                                                 "positions": [
                                                     {
@@ -44,12 +49,9 @@ def test_create_stock(client):
                                                 ]
                                             })
     assert response.status_code == 201
-    # assert Stock.objects.values()[0]['name'] == 'Course_test'
+    assert Stock.objects.values()[0]['name'] == 'Course_test'
 
-@pytest.mark.django_db
-def test_get_stock(client):
-    response = client.post('stocks/')
-    assert response.status_code == 201
+
 
 
 
