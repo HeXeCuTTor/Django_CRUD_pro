@@ -10,7 +10,7 @@ from logistic.serializers import ProductSerializer, StockSerializer
 
 @api_view(['GET'])
 def test_change(request):
-    return Response("Всем привет! Все получилось!")
+    return Response("Всем привет! Все получилось! Отлично!")
 
 
 class ProductViewSet(ModelViewSet):
