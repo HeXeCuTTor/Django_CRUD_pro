@@ -2,11 +2,13 @@ from rest_framework.viewsets import ModelViewSet
 from rest_framework.filters import SearchFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 from logistic.models import Product, Stock
 from logistic.serializers import ProductSerializer, StockSerializer
 
 
+@api_view(['GET'])
 def test_change():
     return Response("Всем привет! Все получилось!")
 
