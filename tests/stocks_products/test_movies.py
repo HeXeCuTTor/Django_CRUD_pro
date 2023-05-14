@@ -9,13 +9,10 @@ from logistic.models import Stock, Product
 def client():
     return APIClient()
 
-def test():
-    assert 2 == 2
-
 @pytest.mark.django_db
 def test_get_stock(client):
     response = client.get('/api/v1/stocks/')
-    assert response.status_code == 300
+    assert response.status_code == 200
 
 @pytest.mark.django_db
 def test_create_product(client):
@@ -25,6 +22,9 @@ def test_create_product(client):
                                                 })
     assert response.status_code == 201
 
+def control_test(client):
+    response = client.get('/api/v1/test/')
+    assert response.data == "Всем привет! Все получилось!"
 
 
 
