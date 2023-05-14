@@ -28,7 +28,7 @@ def test():
 
 @pytest.mark.django_db
 def test_create_stock(client):
-    response = client.post('api/v1/stocks/',{
+    response = client.post('stocks/',{
                                                 "address": "мой адрес не дом и не улица, мой адрес сегодня такой: www.ленинград-спб.ru6",
                                                 "positions": [
                                                     {
@@ -48,7 +48,7 @@ def test_create_stock(client):
 
 @pytest.mark.django_db
 def test_get_stock(client):
-    response = client.post('api/v1/stocks/')
+    response = client.post('stocks/')
     assert response.status_code == 201
 
 
