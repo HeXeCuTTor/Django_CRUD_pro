@@ -61,7 +61,7 @@ jobs:
           DB_PORT: ${{env.PG_PORT}} 
 
       - name: Деплой
-        uses: actions/checkout@v2
+        uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USER}}
