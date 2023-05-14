@@ -29,26 +29,26 @@ def test():
 @pytest.mark.django_db
 def test_get_stock(client):
     response = client.get('/api/v1/stocks/')
-    assert response.status_code == 200
+    assert response.status_code == 300
 
-# @pytest.mark.django_db
-# def test_create_stock(client):
-#     response = client.post('/api/v1/stocks/',{
-#                                                 "address": "мой адрес не дом и не улица, мой адрес сегодня такой: www.ленинград-спб.ru6",
-#                                                 "positions": [
-#                                                     {
-#                                                     "product": 4,
-#                                                     "quantity": 250,
-#                                                     "price": 120.50
-#                                                     },
-#                                                     {
-#                                                     "product": 3,
-#                                                     "quantity": 100,
-#                                                     "price": 180
-#                                                     }
-#                                                 ]
-#                                             })
-#     assert response.status_code == 201
+@pytest.mark.django_db
+def test_create_stock(client):
+    response = client.post('/api/v1/stocks/',{
+                                                "address": "мой адрес не дом и не улица, мой адрес сегодня такой: www.ленинград-спб.ru6",
+                                                "positions": [
+                                                    {
+                                                    "product": 4,
+                                                    "quantity": 250,
+                                                    "price": 120.50
+                                                    },
+                                                    {
+                                                    "product": 3,
+                                                    "quantity": 100,
+                                                    "price": 180
+                                                    }
+                                                ]
+                                            })
+    assert response.status_code == 201
 
 
 
