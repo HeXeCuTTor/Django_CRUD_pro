@@ -1,8 +1,5 @@
 import pytest
 from rest_framework.test import APIClient
-from model_bakery import baker
-
-from logistic.models import Stock, Product
 
 
 @pytest.fixture
@@ -21,11 +18,11 @@ def test_create_product(client):
                                                 "description": "Лучшие помидоры на рынке"
                                                 })
     assert response.status_code == 201
-    
-@pytest.mark.django_db
-def control_test(client):
-    response = client.get('/api/v1/test/')
-    assert response.data == "Всем привет! Все получилось!"
+
+# @pytest.mark.django_db
+# def control_test(client):
+#     response = client.get('/api/v1/test/')
+#     assert response.data == "Всем привет! Все получилось!"
 
 
 
