@@ -1,2 +1,2 @@
-1. Соберите Docker-image командой: docker build . --tag={NAME_OF_IMAGE}
-2. Запуск: docker run {ANY_HOST}:8000 {NAME_OF_IMAGE}
+1. Запуск в bash: docker-compose up -d
+2. Открыть в браузере стартовую страницу: localhost:8222
